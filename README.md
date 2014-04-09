@@ -21,6 +21,8 @@ grunt watch
 ```
 This will watch your `custom/modules` directory for changes of .js files in the `clients` directories. On change it will lint them using `jshint` and clear `cache/javasripts/base`, `cache/api` and `cache/modules` so on the next request all javascript and metadata will be rebuilt!
 
+You will be alerted on any errors that occur during the process so you can just leave it running in the background - This works using Growl for OS X or Windows, Mountain Lion and Mavericks Notification Center, and Notify-Send for Linux
+
 ```
 grunt fixperms
 ```
