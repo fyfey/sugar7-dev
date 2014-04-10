@@ -8,6 +8,7 @@ module.exports = function(grunt) {
         fixpermsUser: 'www-data',
         fixpermsGroup: 'developers',
         cacheDir: 'cache',
+        customClients: 'custom/clients',
         modulesDir: 'custom/modules',
         clean: {
             cache: {
@@ -21,7 +22,8 @@ module.exports = function(grunt) {
         jshint: {
             all: [
                 'Gruntfile.js',
-                '<%= modulesDir %>/*/clients/**/{,*/}*.js'
+                '<%= modulesDir %>/*/clients/**/{,*/}*.js',
+                '<%= customClients %>/**/{,*/}*.js',
             ],
             ignore_views: {
                 options: {
@@ -36,7 +38,14 @@ module.exports = function(grunt) {
         },
         watch: {
             cache: {
-                files: '<%= modulesDir %>/**/clients/**/*.js',
+                files: [
+                    '<%= modulesDir %>/**/clients/**/*.js',
+                    '<%= customClients %>/**/*.js',
+                    '<%= modulesDir %>/**/clients/**/*.php',
+                    '<%= customClients %>/**/*.php',
+                    '<%= modulesDir %>/**/clients/**/*.hbs',
+                    '<%= customClients %>/**/*.hbs'
+                ],
                 tasks: ['fixperms', 'clear']
             },
         },
