@@ -27,3 +27,8 @@ You will be alerted on any errors that occur during the process so you can just 
 grunt fixperms
 ```
 This can be run seperately to fix permissions on the Sugar installation (this is run automatically when .js files are changed)
+
+> Note - Remember to add the following to your .gitignore if using git:
+> * /node_modules
+> * /package.json
+> * /Gruntfile.js
